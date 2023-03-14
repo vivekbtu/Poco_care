@@ -16,6 +16,10 @@ const Authentication = async (req, res, next) => {
                 return res.status(401).json({ message: "Unauthorized"});
             }  
         }
+
+        else{
+            return res.status(401).json({ message: "Token is empty"});
+        }
     }
     catch{
         return res.status(401).json({ message: "Unauthorized"});
