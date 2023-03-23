@@ -14,7 +14,7 @@ userRouter.post("/signup", async (req, res) => {
     const userPresent = await UserModel.findOne({email})
     
     if(userPresent?.email){
-        return res.status(400).json({ message: "User already exist"})
+        return res.send("User already exist");
     }
     else{
         try{
