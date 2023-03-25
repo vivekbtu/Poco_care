@@ -76,7 +76,8 @@ userRouter.post("/login", async (req, res, next) => {
         expiresIn: "28d",
       });
 
-    res.send({"msg":"Login successfull","token" : token, "refresh_token": refresh_token})
+    // res.send({"msg":"Login successfull","token" : token, "refresh_token": refresh_token})
+    res.status(200).json({ message: "Login Success","token" : token, "refresh_token": refresh_token})
 
     }
     catch{
