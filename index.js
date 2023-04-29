@@ -22,6 +22,8 @@ app.get("/",(req,res)=>{
 })
 app.use("/user",userRouter)
 
+// This is the refresh token function, we have to pass email and token 
+// and after verify it will generate a new refresh token and it's valid for only 2 min
 app.post("/refresh", (req, res) => {
     const { email, refresh_token } = req.body;
     const isValid = verifyRefresh(email, refresh_token);
